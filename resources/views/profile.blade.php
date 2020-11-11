@@ -21,15 +21,6 @@ $email = $user->email;
 $tp = $user->contactnumber;
 $id = $user->id;
 
-
-
-
-// "require": {
-//                 "php": ">=5.3.3",
-//                 "phpseclib/bcmath_compat": ">=1.0.3"
-//             },
-
-
 $outlet = 'Rural Ayruvedic Hospital Kesbawa'?>
 
 <section class="content">
