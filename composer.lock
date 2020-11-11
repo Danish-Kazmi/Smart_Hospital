@@ -2108,10 +2108,10 @@
                 "reference": "5f47d34c87767dbcc08b30377a9827df71de91fa",
                 "shasum": ""
             },
-            "require": {
-                "php": ">=5.3.3",
-                "phpseclib/bcmath_compat": ">=1.0.3"
-            },
+            // "require": {
+            //     "php": ">=5.3.3",
+            //     "phpseclib/bcmath_compat": ">=1.0.3"
+            // },
             "require-dev": {
                 "jakub-onderka/php-parallel-lint": "^0.9.0",
                 "phpunit/phpunit": "^4.8 || ^5.5 || ^6.5 || ^7.0",
