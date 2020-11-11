@@ -19,6 +19,7 @@
         "laravelcollective/html": "^5.8.23",
         "mailgun/mailgun-php": "^3.0",
         "milon/barcode": "^5.1",
+        "moontoast/math": "1.1.2 as 1.999.999",
         "nexmo/client": "^2.0",
         "nyholm/psr7": "^1.2",
         "php-http/guzzle6-adapter": "^2.0",
