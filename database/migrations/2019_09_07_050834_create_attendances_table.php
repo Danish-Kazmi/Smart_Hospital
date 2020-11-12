@@ -21,7 +21,7 @@ class CreateAttendancesTable extends Migration
             $table->timestamp('end')->nullable();
             $table->timestamps();
         });
-        DB::unprepared('ALTER TABLE "attendances" ADD UNIQUE KEY(`user_id`,`start`)');
+        DB::unprepared('ALTER TABLE "attendances" ADD UNIQUE KEY("user_id","start")');
     }
 
     /**
