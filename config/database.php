@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Str;
 
+$DATABASE_URL=parse_url('postgres://ziwsgysmewcnxi:5ee243e792b2011ad10324d90808454657771f699159f95178d27106fac91cab@ec2-52-2-82-109.compute-1.amazonaws.com:5432/dan2rl9vak4050');         // Heroku Settings
+
 return [
 
     /*
@@ -15,7 +17,9 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),         // Heroku Settings
+
+    // 'default' => env('DB_CONNECTION', 'mysql'),        Default Setting
 
     /*
     |--------------------------------------------------------------------------
@@ -65,20 +69,31 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => $DATABASE_URL['host'],         // Heroku Settings
+            'port' => $DATABASE_URL['port'],
+            'database' => ltrim($DATABASE_URL['path'],'/'),
+            'username' => $DATABASE_URL['user'],
+            'password' => $DATABASE_URL['pass'],
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'schema' => 'public',
             'sslmode' => 'prefer',
+            // 'url' => env('DATABASE_URL'),                    Default Settings
+            // 'host' => env('DB_HOST', '127.0.0.1'),
+            // 'port' => env('DB_PORT', '5432'),
+            // 'database' => env('DB_DATABASE', 'forge'),
+            // 'username' => env('DB_USERNAME', 'forge'),
+            // 'password' => env('DB_PASSWORD', ''),
+            // 'charset' => 'utf8',
+            // 'prefix' => '',
+            // 'prefix_indexes' => true,
+            // 'schema' => 'public',
+            // 'sslmode' => 'prefer',
         ],
 
         'sqlsrv' => [
+            'driver' => 'sqlsrv',
             'driver' => 'sqlsrv',
             'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', 'localhost'),
