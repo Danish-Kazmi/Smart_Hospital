@@ -19,7 +19,7 @@ class CreateMedicinesTable extends Migration
             $table->string('name_english')->unique();
             $table->string('type_sinhala')->nullable();
             $table->string('type_english')->nullable();
-            $table->integer('qty');
+            $table->integer('qty')->nullable();
             $table->timestamps();
         });
     }
