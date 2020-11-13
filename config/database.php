@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Str;
 
-$DATABASE_URL=parse_url('');         // Heroku Settings
+$DATABASE_URL=parse_url('postgres://hhaptkjgbpzusx:8161742ba9247870139f9f0c3b7793877c415497624986baa891d6200b4e10cb@ec2-52-5-176-53.compute-1.amazonaws.com:5432/dd309fg7h9oiq8');         // Heroku Settings
 
 return [
 
