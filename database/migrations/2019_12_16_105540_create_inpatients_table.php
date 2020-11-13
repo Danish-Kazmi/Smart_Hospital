@@ -16,9 +16,9 @@ class CreateInpatientsTable extends Migration
         Schema::create('inpatients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->bigInteger('patient_id');
+            $table->bigInteger('patient_id')->nullable();
             $table->char('discharged',4)->default('NO'); // YES | NO
-            $table->bigInteger('ward_id')->unsigned();
+            $table->bigInteger('ward_id')->unsigned()->nullable();
             $table->foreign('ward_id')->references('id')->on('wards');
             $table->date('discharged_date')->nullable();
             $table->string('description')->nullable();
@@ -26,12 +26,12 @@ class CreateInpatientsTable extends Migration
             $table->string('patient_inventory')->nullable();
             
             // $table->string('incharge_doctor');
-            $table->string('house_doctor');
-            $table->string('approved_doctor');
-            $table->string('disease');
-            $table->integer('duration');
-            $table->string('condition');
-            $table->string('certified_officer');
+            $table->string('house_doctor')->nullable();
+            $table->string('approved_doctor')->nullable();
+            $table->string('disease')->nullable();
+            $table->integer('duration')->nullable();
+            $table->string('condition')->nullable();
+            $table->string('certified_officer')->nullable();
         });
     }
 

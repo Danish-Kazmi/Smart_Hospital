@@ -15,9 +15,9 @@ class ClinicPatient extends Migration
     {
         Schema::create('clinic_patient', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('patients_id')->unsigned();
+            $table->bigInteger('patients_id')->unsigned()->nullable();
             $table->foreign('patients_id')->references('id')->on('patients');
-            $table->bigInteger('clinic_id')->unsigned();
+            $table->bigInteger('clinic_id')->unsigned()->nullable();
             $table->foreign('clinic_id')->references('id')->on('clinics');
             $table->timestamps();
         });

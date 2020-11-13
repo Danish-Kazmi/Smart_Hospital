@@ -15,9 +15,9 @@ class CreateNoticeboardsTable extends Migration
     {
         Schema::create('noticeboards', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('subject');
-            $table->string('description');
-            $table->integer('user_id');
+            $table->string('subject')->nullable();
+            $table->string('description')->nullable();
+            $table->integer('user_id')->nullable();
             $table->timestamp('time');
         });
     }

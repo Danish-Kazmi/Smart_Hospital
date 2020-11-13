@@ -15,11 +15,11 @@ class CreateClinicsTable extends Migration
     {
         Schema::create('clinics', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name_eng');
-            $table->string('name_sin');
-            $table->string('recuring');
-            $table->date('start-date');
-            $table->bigInteger('doctor_id')->unsigned();
+            $table->string('name_eng')->nullable();
+            $table->string('name_sin')->nullable();
+            $table->string('recuring')->nullable();
+            $table->date('start-date')->nullable();
+            $table->bigInteger('doctor_id')->unsigned()->nullable();
             $table->foreign('doctor_id')->references('id')->on('users');
             $table->timestamps();
         });

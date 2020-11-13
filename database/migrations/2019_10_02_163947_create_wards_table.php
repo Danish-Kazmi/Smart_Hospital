@@ -15,10 +15,10 @@ class CreateWardsTable extends Migration
     {
         Schema::create('wards', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('ward_no')->unique();
-            $table->integer('beds');
-            $table->integer('free_beds');
-            $table->bigInteger('doctor_id');
+            $table->string('ward_no')->unique()->nullable();
+            $table->integer('beds')->nullable();
+            $table->integer('free_beds')->nullable();
+            $table->bigInteger('doctor_id')->nullable();
             $table->timestamps();
         });
     }

@@ -16,10 +16,10 @@ class CreatePatientsTable extends Migration
         Schema::create('patients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->mediumText('address');
-            $table->string('contactnumber');
-            $table->string('sex');
-            $table->date('bod');
+            $table->mediumText('address')->nullable();
+            $table->string('contactnumber')->nullable();
+            $table->string('sex')->nullable();
+            $table->date('bod')->nullable();
             $table->string('civil_status')->nullable();
             $table->string('birth_place')->nullable();
             $table->string('nationality')->nullable();
@@ -27,7 +27,7 @@ class CreatePatientsTable extends Migration
             $table->string('income')->nullable();
             $table->string('guardian')->nullable();
             $table->string('guardian_address')->nullable();
-            $table->string('occupation');
+            $table->string('occupation')->nullable();
             $table->string('nic',15)->nullable()->unique();
             $table->string('telephone',13)->nullable();
             $table->string('image')->default('dist/img/avatar.png');
